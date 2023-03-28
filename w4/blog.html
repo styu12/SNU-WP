@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <script>
+        const createPost = () => {
+            const title = "New Title";
+            const content = "New Content";
+
+            const postWrapper = document.getElementById('post-wrapper');
+            const postBox = document.createElement('div');
+            const postTitle = document.createElement('h2');
+            const postContent = document.createElement('p');
+
+            postTitle.innerHTML = title;
+            postContent.innerHTML = content;
+
+            postBox.appendChild(postTitle);
+            postBox.appendChild(postContent);
+            postWrapper.appendChild(postBox);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>My Blog</h1>
+        <p>Create New Post</p>
+        <button onclick="createPost()">Create Post</button>
+
+        <div id="post-wrapper">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>My First Web Page</title>
+        <script>
+            function drawPyramid(num) {
+                for (var i = 1; i <= num; i++) {
+                    var row = '';
+                    for (var j = 1; j <= num - i; j++) {
+                    row += ' ';
+                    }
+                    for (var k = 1; k <= 2 * i - 1; k++) {
+                    row += '*';
+                    }
+                    console.log(row);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>My First Web Page</h1>
+        <p>My first paragraph.</p>
+        <button onclick="drawPyramid(5)">Click Me!</button>
+    </body>
+</html>
