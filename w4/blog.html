@@ -7,8 +7,10 @@
     <title>My Blog</title>
     <script>
         const createPost = () => {
-            const title = "New Title";
-            const content = "New Content";
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            document.getElementById('title').value = '';
+            document.getElementById('content').value = '';
 
             const postWrapper = document.getElementById('post-wrapper');
             const postBox = document.createElement('div');
@@ -22,13 +24,23 @@
             postBox.appendChild(postContent);
             postWrapper.appendChild(postBox);
         }
+
+        const onEnter = (event) => {
+            if (window.event.keyCode == 13) {
+                createPost();
+            }
+        }
     </script>
 </head>
 <body>
     <div>
         <h1>My Blog</h1>
         <p>Create New Post</p>
-        <button onclick="createPost()">Create Post</button>
+        <div>
+            <input onkeyup="onEnter()" id="title" name="title" type="text" placeholder="Title" style="width: 100px"/>
+            <input  onkeyup="onEnter()" id="content" name="content" type="text" placeholder="Content" style="width: 200px" />
+            <button onclick="createPost()">Submit</button>
+        </div>
 
         <div id="post-wrapper">
         </div>
